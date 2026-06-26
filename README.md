@@ -122,3 +122,17 @@ The following files are intentionally excluded:
   other machine-specific artifacts.
 
 For full details, see `REPRODUCIBILITY.md`.
+
+## Acknowledgements
+
+We sincerely thank the authors of ProteinOPD for releasing the original codebase
+and experimental setting that this reproducibility package builds upon. We also
+acknowledge the open protein language model and evaluation ecosystems used by
+the project, including ProLLaMA, ProtGPT2, ESM/ESMFold, Protein-Sol, and
+TemBERTure, as well as the broader PyTorch, HuggingFace, DeepSpeed, and R
+communities for the software infrastructure that made these experiments
+possible.
+
+This repository is prepared as a code-only release for reproducible research.
+Any errors in the CacheOPD implementation, experiment scripts, or documentation
+are our responsibility.
