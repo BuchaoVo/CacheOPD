@@ -5,17 +5,17 @@ preference alignment. It builds on the ProteinOPD setting and studies whether
 cached Product-of-Experts (PoE) teacher targets can replace online teacher
 scoring while preserving the main preference-alignment signal.
 
-The repository is intentionally organized as a code-and-source-data release.
-Large model checkpoints, raw caches, raw generated sequences, rendered paper
-figures, manuscript drafts, and paper table bundles are not committed to the
-main branch.
+The repository is intentionally organized as a code-only release. Model
+checkpoints, training/evaluation data, raw caches, generated sequences, compact
+CSV result tables, rendered figures, manuscript drafts, and paper table bundles
+are not committed to the main branch.
 
 ## What This Repository Contains
 
 - `conditional/`: conditional ProteinOPD/CacheOPD generation, ProLLaMA OPD
-  training, teacher construction, configs, and compact instruction/data files.
+  training, teacher construction, and configs.
 - `unconditional/`: unconditional ProteinOPD teacher construction, generation,
-  training code, configs, and compact property datasets.
+  training code, and configs.
 - `tools/offline_opd/`: offline cache construction, cached-target fusion,
   token-utility scoring, student training, and diagnostics.
 - `tools/p0_eval/`: PPL, structure, solubility, thermostability, and related
@@ -25,10 +25,9 @@ main branch.
 - `scripts/proteinopd_reproduction/`: ProteinOPD reproduction helpers,
   metric merging, ESM2 diagnostic generation, PDB export, and 3D/solubility
   analysis.
-- `paper_figures_cacheopd/`: source CSV files and R scripts for regenerating
-  editable figures.
-- `results/cacheopd_paper/`: compact CSV summaries and reproducible analysis
-  scripts.
+- `paper_figures_cacheopd/`: R scripts for regenerating editable figures from
+  local source CSV files.
+- `results/cacheopd_paper/`: reproducible analysis scripts and documentation.
 
 ## Main Reproducible Claims
 
@@ -87,7 +86,8 @@ python tools/p0_eval/score_temberture_cls.py --help
 
 ## Regenerate Compact Analyses and Figures
 
-Supplemental analysis CSVs and local figure outputs:
+Supplemental analysis CSVs and local figure outputs can be regenerated after
+placing local evaluation summaries in the expected paths:
 
 ```bash
 Rscript results/cacheopd_paper/scripts/build_cacheopd_paper_outputs.R \
@@ -95,7 +95,8 @@ Rscript results/cacheopd_paper/scripts/build_cacheopd_paper_outputs.R \
   --out-dir results/cacheopd_paper
 ```
 
-Editable figure outputs from tracked source CSV files:
+Editable figure outputs can be regenerated after local source CSV files are
+available:
 
 ```bash
 Rscript paper_figures_cacheopd/scripts/build_all_editable_figures.R --root .
@@ -112,7 +113,9 @@ The following files are intentionally excluded:
 - model checkpoints, LoRA adapters, optimizer states, and raw teacher/student
   outputs;
 - offline caches and token-level teacher logits;
-- HuggingFace Arrow cache directories and expanded `*.full.jsonl` dumps;
+- compact CSV/JSON/JSONL result tables, property datasets, instruction-tuning
+  datasets, HuggingFace Arrow cache directories, and expanded `*.full.jsonl`
+  dumps;
 - raw generated sequences and raw structure/evaluator outputs;
 - manuscript drafts, paper table bundles, and rendered figure files;
 - `analysis_outputs/`, `outputs/`, `logs_nohup/`, local model directories, and

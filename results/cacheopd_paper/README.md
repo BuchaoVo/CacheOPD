@@ -47,16 +47,17 @@ The current workspace has a ready-to-use conda R environment:
 
 ## Data Sources
 
-The core branch tracks compact CSV summaries in this directory and figure source
-CSV files under `paper_figures_cacheopd/source_data/`. The builder can also read
-larger local-only files from `analysis_outputs/` when they exist, but those raw
-workspaces are intentionally not committed to `main`.
+The core branch does not track compact CSV summaries or figure source CSV files.
+The builder reads local-only files from `analysis_outputs/`,
+`paper_figures_cacheopd/source_data/`, or this directory when they exist, but
+those data workspaces are intentionally not committed to `main`.
 
 ## Required Outputs
 
 The script can write the following files locally. In the core repository branch,
-we track compact CSV summaries and scripts; generated LaTeX tables and rendered
-figures may be regenerated locally and need not be committed to `main`.
+we track only scripts and documentation; generated CSV summaries, LaTeX tables,
+and rendered figures may be regenerated locally and need not be committed to
+`main`.
 
 - `cost_decomposition.csv`
 - `sparse_full_bootstrap.csv`

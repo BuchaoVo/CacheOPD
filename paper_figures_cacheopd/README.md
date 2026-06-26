@@ -1,16 +1,15 @@
 # CacheOPD Reproducible Figure Source Data
 
-This lightweight repository branch tracks the scripts and source data needed to
-rebuild the paper figures. Rendered PDF/PNG/SVG/TIFF files are intentionally
-omitted from git and should be regenerated locally.
+This lightweight repository branch tracks the scripts needed to rebuild the
+paper figures. Figure source CSV files and rendered PDF/PNG/SVG/TIFF files are
+intentionally omitted from git and should be generated or supplied locally.
 
 ## Tracked Source Assets
 
 - `scripts/build_all_editable_figures.R`
 - `scripts/build_memt_style_method_figure.R`
 - `scripts/build_scipilot_method_motivation_figures.R`
-- `source_data/*.csv`
-- figure source CSV files under `source_data/`
+- local-only `source_data/*.csv` files when generated
 
 ## Rebuild Editable Figures
 

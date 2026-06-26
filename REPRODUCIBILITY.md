@@ -1,6 +1,6 @@
 # CacheOPD Reproducibility Package
 
-This repository branch contains the code, compact result summaries, and source data needed to reproduce the CacheOPD experiments. Large checkpoints, teacher adapters, raw caches, manuscript drafts, paper table bundles, rendered figure bundles, generated-sequence workspaces, ESMFold intermediate outputs, and nohup logs are intentionally excluded from git.
+This repository branch contains the code and scripts needed to reproduce the CacheOPD experiments. Large checkpoints, teacher adapters, raw caches, compact CSV/JSON/JSONL result files, source data tables, manuscript drafts, paper table bundles, rendered figure bundles, generated-sequence workspaces, ESMFold intermediate outputs, and nohup logs are intentionally excluded from git.
 
 ## Main Claims Covered
 
@@ -15,13 +15,13 @@ This repository branch contains the code, compact result summaries, and source d
 |---|---|
 | `tools/offline_opd/` | Cache construction, cached-target fusion, utility scoring, offline OPD training, diagnostics, and analysis helpers. |
 | `tools/p0_eval/` | PPL, ESMFold structure, Protein-Sol, TemBERTure, and related evaluation helpers. |
-| `conditional/` | Conditional ProteinOPD/CacheOPD generation, teacher construction, ProLLaMA OPD training code, configs, and compact instruction/data files. |
-| `unconditional/` | Unconditional ProteinOPD teacher construction, generation, training code, configs, and compact property datasets. |
+| `conditional/` | Conditional ProteinOPD/CacheOPD generation, teacher construction, ProLLaMA OPD training code, and configs. |
+| `unconditional/` | Unconditional ProteinOPD teacher construction, generation, training code, and configs. |
 | `scripts/conditional_supplement/` | Matched conditional comparison utilities, external baseline wrappers, bootstrap, and report writers. |
 | `scripts/proteinopd_reproduction/` | Reproduction helpers for cohort preparation, metric merging, ESM2 diagnostic generation, PDB/3D visualization export, and solubility-structure analysis. |
 | `scripts_local/` | Cluster-oriented shell entry points used for the final validation and sparse/fusion/anchor runs. |
-| `results/cacheopd_paper/` | Compact CSV summaries and scripts for supplemental analysis. LaTeX tables and rendered PDF/PNG files can be regenerated locally but are not tracked here. |
-| `paper_figures_cacheopd/` | R plotting scripts and source CSVs for regenerating editable SVG/PDF/PNG figures. Paper table source files are not tracked here. |
+| `results/cacheopd_paper/` | Scripts and documentation for supplemental analysis. Compact CSV summaries are local generated artifacts and are not tracked here. |
+| `paper_figures_cacheopd/` | R plotting scripts for regenerating editable SVG/PDF/PNG figures from local source CSV files. Figure source data are not tracked here. |
 
 ## Files Not Included
 
@@ -30,10 +30,10 @@ The following files are required only for full end-to-end reruns and should be r
 - ProLLaMA, ProtGPT2, teacher LoRA adapters, and student checkpoints.
 - Raw offline caches and token-level teacher logits.
 - Raw generated sequences and raw ESMFold/Protein-Sol/TemBERTure outputs.
-- HuggingFace Arrow dataset caches and expanded `*.full.jsonl` instruction dumps.
+- Compact CSV/JSON/JSONL result tables, property datasets, instruction-tuning datasets, HuggingFace Arrow dataset caches, and expanded `*.full.jsonl` instruction dumps.
 - `analysis_outputs/`, `outputs/`, `logs_nohup/`, manuscript draft directories, paper table bundles, and local model directories.
 
-Compact source data for the figures and analyses are included, so the experiments can be reproduced without committing multi-GB artifacts. Manuscript drafts, paper table bundles, and rendered figures are intentionally omitted from this core branch; regenerate them locally when needed.
+This branch intentionally tracks code rather than experiment data. Manuscript drafts, paper table bundles, compact result CSVs, source-data tables, and rendered figures are omitted from the main branch; regenerate them locally when needed or distribute them separately as release artifacts.
 
 ## Rebuild Supplemental Analyses and Figures
 
@@ -53,7 +53,7 @@ conda run -n cacheopd-r Rscript results/cacheopd_paper/scripts/build_cacheopd_pa
   --out-dir results/cacheopd_paper
 ```
 
-This regenerates compact analysis CSVs and, if desired, local-only figure outputs:
+After local evaluation summaries and cache diagnostics are available, this regenerates compact analysis CSVs and, if desired, local-only figure outputs:
 
 - `cost_decomposition.csv`
 - `sparse_full_bootstrap.csv`
@@ -70,7 +70,7 @@ This regenerates compact analysis CSVs and, if desired, local-only figure output
 Rscript paper_figures_cacheopd/scripts/build_all_editable_figures.R --root .
 ```
 
-The workflow writes editable SVG/PDF/PNG files to `paper_figures_cacheopd/figures_editable/` and LaTeX-ready copies to `paper_md_report/images/`. Source CSVs are in `paper_figures_cacheopd/source_data/`.
+The workflow writes editable SVG/PDF/PNG files to `paper_figures_cacheopd/figures_editable/` and optional LaTeX-ready copies to a local manuscript workspace. Source CSV files are local generated artifacts and are not tracked in this branch.
 
 ## Rebuild Method and Motivation Diagrams
 
@@ -122,9 +122,9 @@ python unconditional/proteinopd/protein_opd_train.py --help
 python unconditional/teacher_construct/prefix_tuning_prot.py --help
 ```
 
-Compact property datasets and compact high-preference instruction datasets are
-tracked. Expanded `*.full.jsonl` files and Arrow cache directories are omitted
-because they are derived artifacts and can be regenerated locally.
+Property datasets and high-preference instruction datasets are not tracked in
+the main branch. They can be regenerated locally with the data-construction
+scripts or distributed separately as release artifacts.
 
 ## Evaluation Pipeline
 

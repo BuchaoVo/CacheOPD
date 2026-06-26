@@ -1,8 +1,0 @@
-"figure","editable_stem","primary_source_data","script","output_formats"
-"fig:cacheopd_framework","figure1_cacheopd_framework_editable","figure1_framework_nodes_source_data.csv; figure1_framework_edges_source_data.csv; figure1_framework_claims_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"
-"fig:quality_cost","figure2_quality_cost_tradeoff_editable","figure2_quality_cost_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"
-"fig:sparse_curve","figure3_token_selection_sparse_editable; appendix_sparse_ratio_curve_editable","figure3_sparse_full_bootstrap_source_data.csv; figure3_selected_unselected_source_data.csv; figure3_cache_position_source_data.csv; figure3_sparse_ratio_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"
-"fig:final_validation","figure4_final_validation_editable","figure4_final_validation_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"
-"fig:cache_diagnostics","appendix_teacher_cache_diagnostics_editable","appendix_teacher_cache_source_data.csv; figure3_cache_position_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"
-"fig:sequence_metric_diagnostics","appendix_sequence_metric_diagnostics_editable","appendix_sequence_per_sequence_source_data.csv; appendix_sequence_composition_source_data.csv; appendix_metric_correlation_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"
-"fig:fusion_ablation","appendix_fusion_ablation_editable","appendix_fusion_ablation_source_data.csv","paper_figures_cacheopd/scripts/build_all_editable_figures.R","svg; pdf; png"

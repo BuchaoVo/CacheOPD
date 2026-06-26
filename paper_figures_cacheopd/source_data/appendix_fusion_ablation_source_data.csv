@@ -1,7 +1,0 @@
-"method","fusion_rule","support","tokens","entropy","PPL","pLDDT","pAE","pTM","Sol","Thermo","family"
-"Offline-BaseRollout-K64","raw_poe_sum","teacher top-K union",16488,1.49,67.09,56.29,15.82,0.483,0.664,0.692,"Base"
-"ProbAvg-KD","prob_avg","teacher top-K union",16488,3.5,173.69,50.56,19.92,0.392,0.685,0.395,"KD"
-"LogitAvg-KD","logit_avg","teacher top-K union",16488,3.48,173.74,50.61,19.51,0.404,0.694,0.446,"KD"
-"SFT","reference NLL","reference token",16488,0,221.14,36.4,24.62,0.195,0.674,0.397,"SFT"
-"CacheOPD-Full","cached PoE target","teacher top-K union",16055,1.33,109.52,57.28,15.2,0.497,0.684,0.678,"CacheOPD"
-"CacheOPD-Sparse","cached PoE target","teacher top-K union",5628,1.47,118.2,56.56,15.5,0.484,0.671,0.692,"CacheOPD"

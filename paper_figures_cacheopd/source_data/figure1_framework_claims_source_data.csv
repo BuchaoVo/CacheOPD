@@ -1,5 +1,0 @@
-"x","y","label"
-2.1,0.42,"amortized teacher inference"
-3.25,0.42,"multi-property PoE consensus"
-4.35,0.42,"token-budget reduction"
-5.35,0.42,"zero teacher calls during optimization"

@@ -1,5 +1,0 @@
-"claim","value","role"
-"Teacher-call efficiency","384 vs 6,144 calls","Main hard contribution"
-"Token-budget efficiency","35.1% of full-cache tokens","Sparse approximation"
-"Matched quality","Sparse quality index 0.909 vs full 0.951","Non-inferiority support"
-"Teacher-overlap diagnosis","Mean teacher top-K overlap 0.982","Future stronger-teacher direction"

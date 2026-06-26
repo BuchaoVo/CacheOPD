@@ -34,6 +34,17 @@ teachers_local/
 # and results/cacheopd_paper/.
 analysis_outputs/
 
+# Generated compact experiment data and figure source tables
+results/cacheopd_paper/*.csv
+paper_figures_cacheopd/source_data/
+
+# Local data files for conditional/unconditional workflows
+conditional/data/
+unconditional/data/
+conditional/teacher_construct/scripts/instruction_tuning_dataset/**/*.json
+conditional/teacher_construct/scripts/instruction_tuning_dataset/**/*.jsonl
+!conditional/teacher_construct/scripts/instruction_tuning_dataset/**/README.md
+
 # Tooling noise
 .DS_Store
 wandb/
