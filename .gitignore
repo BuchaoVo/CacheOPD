@@ -1,48 +1,38 @@
-# Python
+# Python / R cache
 __pycache__/
-*.pyc
-.ipynb_checkpoints/
-*.egg-info/
+*.py[cod]
+.pytest_cache/
+.Rhistory
+.RData
+.Rproj.user/
 
-# Environments
-.env
-.venv/
-venv/
-conda_env/
+# Runtime logs and temporary files
+run.log
+*.log
+logs_nohup/
+tmp/
+temp/
 
-# Data
-data/
-datasets/
-raw_data/
-
-# Outputs / logs
-outputs/
-runs/
-logs/
-wandb/
-tensorboard/
-analysis_outputs/
-
-# Checkpoints / model weights
-checkpoints/
-checkpoint-*/
+# Heavy model artifacts and checkpoints
+*.safetensors
+*.bin
 *.pt
 *.pth
 *.ckpt
-*.bin
-*.safetensors
-*.onnx
-*.npz
-*.npy
+checkpoint-*/
+checkpoints/
+outputs/
+conditional_teachers_local/
+conditional_teachers_high_pref_local/
+teachers_local/
 
-# HuggingFace / cache
-.cache/
-huggingface/
-hf_cache/
+# Large regenerated analysis workspaces.
+# The paper-ready source tables, rendered figures, and compact summaries are
+# tracked under paper_md_report/, paper_figures_cacheopd/, paper_tables_aaai/,
+# and results/cacheopd_paper/.
+analysis_outputs/
 
-# Misc
-*.log
+# Tooling noise
 .DS_Store
-
-# VS Code personal settings
-.vscode/settings.json
+wandb/
+mlruns/

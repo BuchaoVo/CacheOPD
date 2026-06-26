@@ -1,0 +1,10 @@
+"teacher_pair","metric","value"
+"foldability_vs_solubility","JSD",0.00340901966939476
+"foldability_vs_thermostability","JSD",0.00210862373652055
+"solubility_vs_thermostability","JSD",0.00439709255657085
+"foldability_vs_solubility","Top-k overlap",0.982026701237263
+"foldability_vs_thermostability","Top-k overlap",0.988401602680738
+"solubility_vs_thermostability","Top-k overlap",0.976974731622999
+"foldability_vs_solubility","Top-1 agreement",0.934437166424066
+"foldability_vs_thermostability","Top-1 agreement",0.960577389616691
+"solubility_vs_thermostability","Top-1 agreement",0.929767103347889

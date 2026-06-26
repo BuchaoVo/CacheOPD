@@ -1,0 +1,8 @@
+"id","x","y","label","family"
+"phase1",0.235,0.705,"I. Reference visitation","phase"
+"phase2",0.755,0.705,"II. Offline teacher cache construction","phase"
+"phase3",0.8,0.36,"III. Sparse cached student distillation","phase"
+"eff1",0.3,0.045,"one-time cache calls","eff"
+"eff2",0.545,0.045,"training-stage teacher calls = 0","eff"
+"eff3",0.785,0.045,"35.1% preference-token budget","eff"
+"formula",0.455,0.37,"cached PoE: normalized product over teacher-supported candidate tokens","formula"

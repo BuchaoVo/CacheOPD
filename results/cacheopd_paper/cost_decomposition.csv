@@ -1,0 +1,8 @@
+"method","cache_teacher_calls","training_teacher_calls","total_teacher_calls","student_gpu_hours","effective_tokens","total_teacher_call_reduction_vs_online_pct"
+"ProLLaMA",0,0,0,NA,NA,100
+"SFT",0,0,0,0.0269925230741501,16488,100
+"ProbAvg-KD",384,0,384,0.0264092714918984,16488,93.75
+"LogitAvg-KD",384,0,384,0.0267747639285194,16488,93.75
+"Online OPD",0,6144,6144,1.526,NA,0
+"CacheOPD-Full",384,0,384,0.033,16055,93.75
+"CacheOPD-Sparse",384,0,384,0.0288132327795029,5628,93.75

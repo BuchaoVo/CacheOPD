@@ -1,0 +1,6 @@
+"method","effective_tokens","sparse_ratio_vs_full","ppl","plddt","pae","ptm","sol","thermo","status","display"
+"Sparse k25 High",4122,0.257,116.21,57.23,14.9,0.503,0.653,0.676,"diagnostic","25.7% sparse"
+"CacheOPD-Sparse",5628,0.351,118.2,56.56,15.5,0.484,0.671,0.692,"matched","35.1% sparse"
+"Sparse q=0 High50",8244,0.513,65.59,56.29,15.84,0.48,0.669,0.706,"diagnostic","51.3% sparse"
+"Sparse k75 High",12366,0.77,116.63,57.22,15.22,0.493,0.658,0.678,"diagnostic","77.0% sparse"
+"CacheOPD-Full",16055,1,109.52,57.28,15.2,0.497,0.684,0.678,"available","100% full"
