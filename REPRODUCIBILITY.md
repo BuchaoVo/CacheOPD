@@ -15,6 +15,8 @@ This repository branch contains the code, compact result summaries, and source d
 |---|---|
 | `tools/offline_opd/` | Cache construction, cached-target fusion, utility scoring, offline OPD training, diagnostics, and figure/table builders. |
 | `tools/p0_eval/` | PPL, ESMFold structure, Protein-Sol, TemBERTure, and related evaluation helpers. |
+| `conditional/` | Conditional ProteinOPD/CacheOPD generation, teacher construction, ProLLaMA OPD training code, configs, and compact instruction/data files. |
+| `unconditional/` | Unconditional ProteinOPD teacher construction, generation, training code, configs, and compact property datasets. |
 | `scripts/conditional_supplement/` | Matched conditional comparison utilities, external baseline wrappers, bootstrap, and report writers. |
 | `scripts/proteinopd_reproduction/` | Reproduction helpers for cohort preparation, metric merging, ESM2 diagnostic generation, PDB/3D visualization export, and solubility-structure analysis. |
 | `scripts/paper_tables/` | AAAI table bundle generation utilities. |
@@ -29,6 +31,7 @@ The following files are required only for full end-to-end reruns and should be r
 - ProLLaMA, ProtGPT2, teacher LoRA adapters, and student checkpoints.
 - Raw offline caches and token-level teacher logits.
 - Raw generated sequences and raw ESMFold/Protein-Sol/TemBERTure outputs.
+- HuggingFace Arrow dataset caches and expanded `*.full.jsonl` instruction dumps.
 - `analysis_outputs/`, `outputs/`, `logs_nohup/`, manuscript draft directories, paper table bundles, and local model directories.
 
 Compact source data for the figures and analyses are included, so the experiments can be reproduced without committing multi-GB artifacts. Manuscript drafts, paper table bundles, and rendered figures are intentionally omitted from this core branch; regenerate them locally when needed.
@@ -105,6 +108,24 @@ Cluster shell wrappers used for the final experiments are available in `scripts_
 - `run_experiment6_anchor_generate_4superfamily.sh`
 
 These scripts assume local model/checkpoint paths and GPU assignments from the original lab environment. Update paths before running on a new machine.
+
+## Conditional and Unconditional ProteinOPD Entrypoints
+
+The original conditional and unconditional ProteinOPD workflows are included as
+code/config/data scaffolds:
+
+```bash
+python conditional/generate/generate.py --help
+python conditional/proteinopd/prollama_opd_train.py --help
+python conditional/teacher_construct/scripts/instruction_tune.py --help
+python unconditional/generate/generate.py --help
+python unconditional/proteinopd/protein_opd_train.py --help
+python unconditional/teacher_construct/prefix_tuning_prot.py --help
+```
+
+Compact property datasets and compact high-preference instruction datasets are
+tracked. Expanded `*.full.jsonl` files and Arrow cache directories are omitted
+because they are derived artifacts and can be regenerated locally.
 
 ## Evaluation Pipeline
 

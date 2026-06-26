@@ -19,6 +19,8 @@ temp/
 *.pt
 *.pth
 *.ckpt
+*.arrow
+*.full.jsonl
 checkpoint-*/
 checkpoints/
 outputs/
