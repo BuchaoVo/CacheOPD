@@ -13,13 +13,12 @@ This repository branch contains the code, compact result summaries, and source d
 
 | Path | Purpose |
 |---|---|
-| `tools/offline_opd/` | Cache construction, cached-target fusion, utility scoring, offline OPD training, diagnostics, and figure/table builders. |
+| `tools/offline_opd/` | Cache construction, cached-target fusion, utility scoring, offline OPD training, diagnostics, and analysis helpers. |
 | `tools/p0_eval/` | PPL, ESMFold structure, Protein-Sol, TemBERTure, and related evaluation helpers. |
 | `conditional/` | Conditional ProteinOPD/CacheOPD generation, teacher construction, ProLLaMA OPD training code, configs, and compact instruction/data files. |
 | `unconditional/` | Unconditional ProteinOPD teacher construction, generation, training code, configs, and compact property datasets. |
 | `scripts/conditional_supplement/` | Matched conditional comparison utilities, external baseline wrappers, bootstrap, and report writers. |
 | `scripts/proteinopd_reproduction/` | Reproduction helpers for cohort preparation, metric merging, ESM2 diagnostic generation, PDB/3D visualization export, and solubility-structure analysis. |
-| `scripts/paper_tables/` | AAAI table bundle generation utilities. |
 | `scripts_local/` | Cluster-oriented shell entry points used for the final validation and sparse/fusion/anchor runs. |
 | `results/cacheopd_paper/` | Compact CSV summaries and scripts for supplemental analysis. LaTeX tables and rendered PDF/PNG files can be regenerated locally but are not tracked here. |
 | `paper_figures_cacheopd/` | R plotting scripts and source CSVs for regenerating editable SVG/PDF/PNG figures. Paper table source files are not tracked here. |
@@ -36,7 +35,7 @@ The following files are required only for full end-to-end reruns and should be r
 
 Compact source data for the figures and analyses are included, so the experiments can be reproduced without committing multi-GB artifacts. Manuscript drafts, paper table bundles, and rendered figures are intentionally omitted from this core branch; regenerate them locally when needed.
 
-## Rebuild Paper Tables and Supplemental Figures
+## Rebuild Supplemental Analyses and Figures
 
 From the repository root:
 
@@ -54,15 +53,15 @@ conda run -n cacheopd-r Rscript results/cacheopd_paper/scripts/build_cacheopd_pa
   --out-dir results/cacheopd_paper
 ```
 
-This regenerates compact analysis CSVs and, if desired, local-only LaTeX/figure outputs:
+This regenerates compact analysis CSVs and, if desired, local-only figure outputs:
 
 - `cost_decomposition.csv`
 - `sparse_full_bootstrap.csv`
 - `fusion_variant_results.csv`
-- `quality_cost_plot.csv` and `quality_cost_scatter.pdf/png`
-- `sparse_ratio_results.csv` and `sparse_ratio_curve.pdf/png`
-- `cache_position_diagnostics.csv`, `cache_diagnostics.pdf/png`, and `selected_unselected_stats.csv`
-- `teacher_pairwise_diagnostics.csv`, `teacher_pairwise_summary.csv`, and `teacher_overlap_heatmap.pdf/png`
+- `quality_cost_plot.csv` and local `quality_cost_scatter.pdf/png`
+- `sparse_ratio_results.csv` and local `sparse_ratio_curve.pdf/png`
+- `cache_position_diagnostics.csv`, local `cache_diagnostics.pdf/png`, and `selected_unselected_stats.csv`
+- `teacher_pairwise_diagnostics.csv`, `teacher_pairwise_summary.csv`, and local `teacher_overlap_heatmap.pdf/png`
 - optional Pareto and qualitative outputs when the corresponding source data exist
 
 ## Rebuild Editable Manuscript Figures

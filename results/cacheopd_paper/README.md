@@ -47,19 +47,10 @@ The current workspace has a ready-to-use conda R environment:
 
 ## Data Sources
 
-The script reads the following existing files when available:
-
-- `paper_figures_cacheopd/tables/table1_main_quality_cost_filled.csv`
-- `paper_figures_cacheopd/tables/table2_efficiency_breakdown.csv`
-- `paper_figures_cacheopd/tables/table2_offline_target_ablation.csv`
-- `analysis_outputs/offline_proteinopd/supplemental_analysis/full_vs_cacheopd_bootstrap.csv`
-- `analysis_outputs/offline_proteinopd/experiment3_fusion/experiment3_full_eval_summary_prollama_ppl.csv`
-- `analysis_outputs/offline_proteinopd/final_validation_shortboard/final_validation_shortboard_summary.csv`
-- `analysis_outputs/offline_proteinopd/final_utility_shift_entropy_q02_keep50/token_utility_scores.csv`
-- `analysis_outputs/offline_proteinopd/contribution2/base_rollout_keep50/token_utility_scores.csv`
-- `analysis_outputs/offline_proteinopd/teacher_distribution_diagnostics/pairwise_teacher_distribution_summary.csv`
-- `analysis_outputs/offline_proteinopd/teacher_distribution_diagnostics/teacher_distribution_token_scores.csv`
-- `analysis_outputs/offline_proteinopd/supplemental_analysis/method_level_pareto_frontier.csv`
+The core branch tracks compact CSV summaries in this directory and figure source
+CSV files under `paper_figures_cacheopd/source_data/`. The builder can also read
+larger local-only files from `analysis_outputs/` when they exist, but those raw
+workspaces are intentionally not committed to `main`.
 
 ## Required Outputs
 

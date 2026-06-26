@@ -23,8 +23,8 @@ The script writes editable outputs to:
 - `paper_figures_cacheopd/figures_editable/*.svg`
 - `paper_figures_cacheopd/figures_editable/*.pdf`
 - `paper_figures_cacheopd/figures_editable/*.png`
-- `paper_md_report/images/cacheopd_*.pdf`
-- `paper_md_report/images/cacheopd_*.png`
+- optional LaTeX-ready copies under `paper_md_report/images/` if that local
+  manuscript workspace exists.
 
 ## Rebuild Method and Motivation Diagrams
 
@@ -33,7 +33,8 @@ Rscript paper_figures_cacheopd/scripts/build_scipilot_method_motivation_figures.
 Rscript paper_figures_cacheopd/scripts/build_memt_style_method_figure.R --root .
 ```
 
-The generated method diagrams are copied to `paper_md_report/Report MD/figures/`.
+The generated method diagrams can also be copied to a local manuscript figure
+directory if one exists.
 
 ## Notes
 
